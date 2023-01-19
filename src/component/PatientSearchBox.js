@@ -22,7 +22,7 @@ export function PatientSearchBox({ onQuery }) {
         var mm = String(today.getMonth() + 1).padStart(2, '0');
         var yyyy = today.getFullYear();
         today = mm + '/' + dd + '/' + yyyy;
-        return axios.get("http://localhost:8080/patients/getById?patientId="+patientId+"&visitDate="+today)
+        return axios.get("https://3.110.172.211:8080/channelling-manager/patients/getById?patientId="+patientId+"&visitDate="+today)
             .then((response) => {
                 onQuery(response.data)
             });

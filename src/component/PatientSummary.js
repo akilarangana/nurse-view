@@ -38,6 +38,14 @@ export function PatientSummary(row) {
                             </Grid>
                         </React.Fragment>
                     </Grid>
+
+                    <Grid container item spacing={1}>
+                        <React.Fragment>
+                            <Grid item xs={1}>
+                                <label><b>Notes : </b></label> <label>{row.query.visitData.notes}</label>
+                            </Grid>
+                        </React.Fragment>
+                    </Grid>
                 </Grid>
 
 

@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './PatientSummary.css';
 import axios from "axios";
+import configData from "../config.json";
 
 export function PatientSearchBox({ onQuery }) {
 
@@ -22,7 +23,7 @@ export function PatientSearchBox({ onQuery }) {
         var mm = String(today.getMonth() + 1).padStart(2, '0');
         var yyyy = today.getFullYear();
         today = mm + '/' + dd + '/' + yyyy;
-        return axios.get("https://3.110.172.211:8080/channelling-manager/patients/getById?patientId="+patientId+"&visitDate="+today)
+        return axios.get(configData.SERVER_URL +"/patients/getById?patientId="+patientId+"&visitDate="+today)
             .then((response) => {
                 onQuery(response.data)
             });

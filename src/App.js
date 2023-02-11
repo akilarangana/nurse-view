@@ -7,7 +7,7 @@ import { useState } from "react";
 import Grid from '@mui/material/Grid';
 import Snackbar from '@mui/material/Snackbar';
 import Alert, { AlertProps } from '@mui/material/Alert';
-
+import configData from "config.json";
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
   const handleDoneClick = async (e) => {
     e.preventDefault();
     try {
-      let res = await fetch("http://localhost:8080/inventory/update", {
+      let res = await fetch(configData.SERVER_URL +"/inventory/update", {
         method: "PUT",
         headers: {
           'Accept': 'application/json, text/plain',

@@ -23,7 +23,7 @@ export function PatientSearchBox({ onQuery }) {
         var mm = String(today.getMonth() + 1).padStart(2, '0');
         var yyyy = today.getFullYear();
         today = mm + '/' + dd + '/' + yyyy;
-        return axios.get(configData.SERVER_URL +"/patients/getbyid?patientId="+patientId+"&visitDate="+today)
+        return axios.get(configData.SERVER_URL +"/patients/getById?patientId="+patientId+"&visitDate="+today)
             .then((response) => {
                 onQuery(response.data)
             });

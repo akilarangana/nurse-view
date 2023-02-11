@@ -7,7 +7,7 @@ import { useState } from "react";
 import Grid from '@mui/material/Grid';
 import Snackbar from '@mui/material/Snackbar';
 import Alert, { AlertProps } from '@mui/material/Alert';
-import configData from "config.json";
+import configData from "./config.json";
 
 function App() {
 
